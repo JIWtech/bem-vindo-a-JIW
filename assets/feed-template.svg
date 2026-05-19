@@ -1,0 +1,32 @@
+<svg width="1080" height="1080" viewBox="0 0 1080 1080" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Template de post JIW</title>
+  <desc id="desc">Modelo edit&#225;vel para post de redes sociais da JIW Solu&#231;&#245;es Tecnol&#243;gicas.</desc>
+  <rect width="1080" height="1080" fill="#F8FAFC"/>
+  <rect x="0" y="0" width="1080" height="178" fill="#111827"/>
+
+  <g aria-hidden="true" transform="translate(64 44)">
+    <rect x="0" y="0" width="40" height="40" rx="9" fill="#1FB6A6"/>
+    <rect x="50" y="0" width="40" height="40" rx="9" fill="#F2B84B"/>
+    <rect x="100" y="0" width="40" height="40" rx="9" fill="#EF6F6C"/>
+    <rect x="0" y="50" width="40" height="40" rx="9" fill="#F8FAFC"/>
+    <rect x="50" y="50" width="40" height="40" rx="9" fill="#1FB6A6"/>
+    <path d="M100 50H131C135.971 50 140 54.029 140 59V90H109C104.029 90 100 85.971 100 81V50Z" fill="#F8FAFC"/>
+  </g>
+
+  <text x="238" y="80" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="48" font-weight="850" letter-spacing="0">JIW</text>
+  <text x="240" y="119" fill="#C9D2DC" font-family="Inter, Arial, sans-serif" font-size="24" font-weight="650" letter-spacing="0">Solu&#231;&#245;es Tecnol&#243;gicas</text>
+  <rect x="240" y="139" width="176" height="5" rx="2.5" fill="#1FB6A6"/>
+  <rect x="426" y="139" width="54" height="5" rx="2.5" fill="#F2B84B"/>
+  <rect x="490" y="139" width="20" height="5" rx="2.5" fill="#EF6F6C"/>
+
+  <text x="64" y="340" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="850" letter-spacing="0">Sua empresa perde vendas</text>
+  <text x="64" y="426" fill="#111827" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="850" letter-spacing="0">quando o digital confunde.</text>
+  <rect x="64" y="522" width="344" height="16" rx="8" fill="#1FB6A6"/>
+  <text x="64" y="634" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="43" font-weight="600" letter-spacing="0">Organizamos presen&#231;a digital,</text>
+  <text x="64" y="694" fill="#334155" font-family="Inter, Arial, sans-serif" font-size="43" font-weight="600" letter-spacing="0">WhatsApp, site e automa&#231;&#245;es.</text>
+  <rect x="64" y="832" width="496" height="96" rx="18" fill="#111827"/>
+  <text x="312" y="893" text-anchor="middle" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="820" letter-spacing="0">Pe&#231;a um diagn&#243;stico</text>
+  <circle cx="908" cy="870" r="96" fill="#F2B84B"/>
+  <circle cx="836" cy="782" r="38" fill="#EF6F6C"/>
+  <circle cx="950" cy="740" r="26" fill="#1FB6A6"/>
+</svg>

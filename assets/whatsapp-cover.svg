@@ -1,0 +1,31 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Capa WhatsApp JIW</title>
+  <desc id="desc">Capa de apresenta&#231;&#227;o para WhatsApp Business da JIW Solu&#231;&#245;es Tecnol&#243;gicas.</desc>
+  <rect width="1600" height="900" fill="#111827"/>
+  <path d="M930 -120H1660V420C1531 375 1419 363 1325 384C1218 408 1139 463 1088 550C1036 639 958 684 854 684C746 684 656 633 584 532C511 430 415 379 296 379C184 379 85 423 0 511V0H930V-120Z" fill="#162235"/>
+
+  <g aria-hidden="true" transform="translate(120 92)">
+    <rect x="0" y="0" width="112" height="112" rx="25" fill="#1FB6A6"/>
+    <rect x="136" y="0" width="112" height="112" rx="25" fill="#F2B84B"/>
+    <rect x="272" y="0" width="112" height="112" rx="25" fill="#EF6F6C"/>
+    <rect x="0" y="136" width="112" height="112" rx="25" fill="#F8FAFC"/>
+    <rect x="136" y="136" width="112" height="112" rx="25" fill="#1FB6A6"/>
+    <path d="M272 136H359C372.807 136 384 147.193 384 161V248H297C283.193 248 272 236.807 272 223V136Z" fill="#F8FAFC"/>
+  </g>
+
+  <text x="120" y="512" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="128" font-weight="850" letter-spacing="0">JIW</text>
+  <text x="124" y="586" fill="#D8E0E7" font-family="Inter, Arial, sans-serif" font-size="50" font-weight="650" letter-spacing="0">Solu&#231;&#245;es Tecnol&#243;gicas</text>
+  <rect x="124" y="622" width="320" height="8" rx="4" fill="#1FB6A6"/>
+  <rect x="462" y="622" width="104" height="8" rx="4" fill="#F2B84B"/>
+  <rect x="584" y="622" width="42" height="8" rx="4" fill="#EF6F6C"/>
+  <text x="124" y="704" fill="#AEBBCC" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="520" letter-spacing="0">Sites, automa&#231;&#245;es, ERP, mensageria e canais omnichannel.</text>
+
+  <g aria-hidden="true">
+    <rect x="1016" y="492" width="430" height="84" rx="18" fill="#1FB6A6"/>
+    <text x="1231" y="547" text-anchor="middle" fill="#071B1A" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="820" letter-spacing="0">Diagn&#243;stico + execu&#231;&#227;o</text>
+    <rect x="1016" y="610" width="430" height="84" rx="18" fill="#F2B84B"/>
+    <text x="1231" y="665" text-anchor="middle" fill="#211705" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="820" letter-spacing="0">Venda r&#225;pida</text>
+    <rect x="1016" y="728" width="430" height="84" rx="18" fill="#EF6F6C"/>
+    <text x="1231" y="783" text-anchor="middle" fill="#230707" font-family="Inter, Arial, sans-serif" font-size="31" font-weight="820" letter-spacing="0">Opera&#231;&#227;o escal&#225;vel</text>
+  </g>
+</svg>

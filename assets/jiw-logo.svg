@@ -1,0 +1,22 @@
+<svg width="640" height="220" viewBox="0 0 640 220" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">JIW Solu&#231;&#245;es Tecnol&#243;gicas</title>
+  <desc id="desc">Logotipo horizontal da JIW com s&#237;mbolo modular e assinatura Solu&#231;&#245;es Tecnol&#243;gicas.</desc>
+  <rect width="640" height="220" rx="28" fill="#111827"/>
+
+  <g aria-hidden="true" transform="translate(58 42)">
+    <rect x="0" y="0" width="60" height="60" rx="14" fill="#1FB6A6"/>
+    <rect x="74" y="0" width="60" height="60" rx="14" fill="#F2B84B"/>
+    <rect x="148" y="0" width="60" height="60" rx="14" fill="#EF6F6C"/>
+    <rect x="0" y="74" width="60" height="60" rx="14" fill="#F8FAFC"/>
+    <rect x="74" y="74" width="60" height="60" rx="14" fill="#1FB6A6"/>
+    <path d="M148 74H194C201.732 74 208 80.268 208 88V134H162C154.268 134 148 127.732 148 120V74Z" fill="#F8FAFC"/>
+  </g>
+
+  <g transform="translate(304 48)">
+    <text x="0" y="62" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="76" font-weight="850" letter-spacing="0">JIW</text>
+    <text x="3" y="103" fill="#C9D2DC" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="650" letter-spacing="0">Solu&#231;&#245;es Tecnol&#243;gicas</text>
+    <rect x="3" y="127" width="190" height="6" rx="3" fill="#1FB6A6"/>
+    <rect x="205" y="127" width="62" height="6" rx="3" fill="#F2B84B"/>
+    <rect x="279" y="127" width="24" height="6" rx="3" fill="#EF6F6C"/>
+  </g>
+</svg>
