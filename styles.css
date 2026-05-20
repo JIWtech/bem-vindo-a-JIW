@@ -1172,6 +1172,23 @@ select {
   color: var(--teal-dark);
 }
 
+
+.sv-case {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--teal);
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  opacity: 0.8;
+}
+.service-card:hover .sv-case {
+  opacity: 1;
+  transform: translateX(4px);
+  color: var(--teal-dark);
+}
 .sv-content p {
   font-size: 1rem;
   color: var(--text);
