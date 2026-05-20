@@ -1,4 +1,5 @@
-const WHATSAPP_NUMBER = "";
+const WHATSAPP_NUMBER = "5521994037748";
+const sanitizedWhatsappNumber = WHATSAPP_NUMBER.replace(/\D/g, "");
 
 const links = [...document.querySelectorAll(".nav a")];
 const sections = links
@@ -25,6 +26,12 @@ sections.forEach((section) => observer.observe(section));
 const form = document.querySelector("#leadForm");
 const note = document.querySelector("#formNote");
 
+if (note) {
+  note.innerHTML = sanitizedWhatsappNumber
+    ? "Ao enviar, vamos abrir sua mensagem direto no WhatsApp."
+    : 'Configure o n&uacute;mero de contato no arquivo <code>script.js</code> para abrir a conversa direto.';
+}
+
 form?.addEventListener("submit", async (event) => {
   event.preventDefault();
   const data = new FormData(form);
@@ -36,9 +43,9 @@ form?.addEventListener("submit", async (event) => {
     `Interesse: ${data.get("interesse")}`,
   ].join("\n");
 
-  if (WHATSAPP_NUMBER) {
+  if (sanitizedWhatsappNumber) {
     window.open(
-      `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`,
+      `https://wa.me/${sanitizedWhatsappNumber}?text=${encodeURIComponent(message)}`,
       "_blank",
       "noopener,noreferrer",
     );
@@ -55,7 +62,9 @@ form?.addEventListener("submit", async (event) => {
 });
 
 // Scroll reveal (run once)
-const revealElements = document.querySelectorAll('.section-head, .price-card, .services article, .steps article, .comparison article, .section-copy');
+const revealElements = document.querySelectorAll(
+  '.section-head, .price-card, .steps article, .comparison article, .section-copy, .service-card, .b-card, .lead-form',
+);
 revealElements.forEach(el => el.classList.add('reveal'));
 
 const revealObserver = new IntersectionObserver((entries) => {
@@ -73,9 +82,11 @@ revealElements.forEach((el) => {
 
 // Scroll reveal (run once)
 document.addEventListener('DOMContentLoaded', () => {
-  const elements = document.querySelectorAll('h2, .section-copy p, .hero-proof div, .price-card, .services article, .steps article, .comparison article, .benefit-list li, .b-card, .package-benefits h3, .package-benefits p, .premium-features li, .service-card, .section-head p, details.frufru-faq');
+  const elements = document.querySelectorAll(
+    'h2, .section-copy p, .hero-proof div, .price-card, .steps article, .comparison article, .benefit-list li, .b-card, .package-benefits h3, .package-benefits p, .premium-features li, .service-card, .section-head p, details.frufru-faq, .lead-form',
+  );
   
-  elements.forEach((el, index) => {
+  elements.forEach((el) => {
     el.classList.add('frufru-hidden');
   });
 

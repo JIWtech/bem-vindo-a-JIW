@@ -2,12 +2,14 @@
   --ink: #f8fafc;
   --ink-soft: #e2e8f0;
   --muted: #94a3b8;
+  --slate: #94a3b8;
   --text: #cbd5e1;
   --paper: #0b111d;
   --line: rgba(255, 255, 255, 0.08);
   --white: #162235;
   --teal: #1fb6a6;
   --teal-dark: #2dd4bf;
+  --teal-light: #7ce9dd;
   --amber: #f2b84b;
   --coral: #ef6f6c;
   --divider-line: rgba(31, 182, 166, 0.58);
@@ -195,7 +197,7 @@ img {
 }
 
 .brand-tile.white {
-  background: var(--paper);
+  background: #f8fafc;
 }
 
 .brand-tile.second {
@@ -214,12 +216,17 @@ img {
 }
 
 .eyebrow {
-  margin: 0 0 12px;
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 6px 14px;
   color: var(--teal);
-  font-size: 13px;
-  font-weight: 900;
-  letter-spacing: 0;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 1px;
   text-transform: uppercase;
+  border: 1px solid rgba(31, 182, 166, 0.4);
+  border-radius: 20px;
+  background: linear-gradient(135deg, rgba(31, 182, 166, 0.15), rgba(31, 182, 166, 0.05));
 }
 
 h1,
@@ -335,18 +342,18 @@ li {
   flex: 1 1 210px;
   max-width: 280px;
   padding: 18px 16px 16px;
-  border: 1px solid rgba(31, 182, 166, 0.16);
+  border: 1px solid rgba(31, 182, 166, 0.24);
   border-radius: 22px;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.02)),
-    rgba(17, 24, 39, 0.32);
+    linear-gradient(180deg, rgba(31, 182, 166, 0.1), rgba(31, 182, 166, 0.03)),
+    rgba(17, 24, 39, 0.38);
   box-shadow: 0 18px 36px rgba(0, 0, 0, 0.14);
   text-align: center;
 }
 
 .hero-proof strong {
   display: block;
-  color: var(--ink);
+  color: var(--teal-dark);
   font-size: clamp(22px, 2.7vw, 30px);
   line-height: 1;
   letter-spacing: -0.02em;
@@ -355,7 +362,7 @@ li {
 .hero-proof span {
   display: block;
   margin-top: 8px;
-  color: #cbd5e1;
+  color: #d7e0e8;
   font-weight: 720;
   font-size: 15px;
   line-height: 1.45;
@@ -366,10 +373,10 @@ li {
 }
 .hero-proof div:hover {
   transform: translateY(-6px);
-  border-color: rgba(31, 182, 166, 0.32);
+  border-color: rgba(31, 182, 166, 0.42);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.03)),
-    rgba(17, 24, 39, 0.44);
+    linear-gradient(180deg, rgba(31, 182, 166, 0.16), rgba(31, 182, 166, 0.05)),
+    rgba(17, 24, 39, 0.5);
   box-shadow: 0 24px 40px rgba(0, 0, 0, 0.18);
 }
 
@@ -378,11 +385,11 @@ li {
 }
 
 .hero-proof div:nth-child(2) strong {
-  color: var(--ink);
+  color: var(--teal-dark);
 }
 
 .hero-proof div:nth-child(3) strong {
-  color: var(--amber);
+  color: var(--teal-dark);
 }
 
 .hero-proof div:nth-child(1) {
@@ -390,11 +397,11 @@ li {
 }
 
 .hero-proof div:nth-child(2) {
-  border-color: rgba(248, 250, 252, 0.14);
+  border-color: rgba(31, 182, 166, 0.24);
 }
 
 .hero-proof div:nth-child(3) {
-  border-color: rgba(242, 184, 75, 0.24);
+  border-color: rgba(31, 182, 166, 0.24);
 }
 
 @media (max-width: 700px) {
@@ -404,16 +411,6 @@ li {
     text-align: left;
   }
 }
-
-.price-card {
-  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
-  will-change: transform;
-}
-.price-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.18);
-}
-
 
 .section {
   padding: clamp(66px, 9vw, 118px) clamp(18px, 6vw, 92px);
@@ -562,7 +559,6 @@ li {
 
 .view,
 .price-card,
-.services article,
 .steps article {
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -575,7 +571,6 @@ li {
 }
 
 .view span,
-.services span,
 .steps span,
 .price-card p {
   display: inline-flex;
@@ -672,14 +667,12 @@ li {
   margin-top: auto;
 }
 
-.services,
 .steps {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
 }
 
-.services article,
 .steps article {
   padding: 24px;
 }
@@ -828,7 +821,6 @@ select {
   }
 
   .pricing,
-  .services,
   .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -858,7 +850,6 @@ select {
   .hero-proof,
   .comparison,
   .pricing,
-  .services,
   .steps,
   .segment-grid {
     grid-template-columns: 1fr;
@@ -904,27 +895,6 @@ select {
 }
 
 /* Frufru na comparison */
-.comparison article {
-  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
-}
-
-.comparison article:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
-}
-
-.services article, .steps article {
-  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
-  border-radius: 12px;
-}
-
-.services article:hover, .steps article:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
-  background: var(--white);
-}
-
-
 /* === Efeitos Frufru Premium === */
 
 .frufru-hidden {
@@ -941,10 +911,10 @@ select {
 }
 
 /* Atrasos em cascata para elementos do Hero e Cards */
-.hero-proof div:nth-child(1), .services article:nth-child(1), .steps article:nth-child(1) { transition-delay: 50ms; }
-.hero-proof div:nth-child(2), .services article:nth-child(2), .steps article:nth-child(2) { transition-delay: 150ms; }
-.hero-proof div:nth-child(3), .services article:nth-child(3), .steps article:nth-child(3) { transition-delay: 250ms; }
-.services article:nth-child(4), .steps article:nth-child(4) { transition-delay: 350ms; }
+.hero-proof div:nth-child(1), .steps article:nth-child(1) { transition-delay: 50ms; }
+.hero-proof div:nth-child(2), .steps article:nth-child(2) { transition-delay: 150ms; }
+.hero-proof div:nth-child(3), .steps article:nth-child(3) { transition-delay: 250ms; }
+.steps article:nth-child(4) { transition-delay: 350ms; }
 
 /* Efeitos intensos de hover */
 .button {
@@ -968,11 +938,11 @@ select {
   box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
 }
 
-.services article, .steps article {
+.steps article {
   transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
   border-radius: 12px;
 }
-.services article:hover, .steps article:hover {
+.steps article:hover {
   transform: translateY(-8px);
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
   background: var(--white);
