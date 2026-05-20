@@ -264,7 +264,7 @@ li {
 .hero-proof strong {
   display: block;
   color: var(--amber);
-  font-size: clamp(36px, 5vw, 58px);
+  font-size: clamp(44px, 6vw, 64px);
   line-height: 1;
 }
 
@@ -274,6 +274,24 @@ li {
   color: #d7e0e8;
   font-weight: 720;
 }
+
+.hero-proof div {
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), background 220ms ease;
+}
+.hero-proof div:hover {
+  transform: translateY(-6px);
+  background: rgba(17, 24, 39, 0.48);
+}
+
+.price-card {
+  transition: transform 220ms cubic-bezier(.2,.9,.2,1), box-shadow 220ms ease;
+  will-change: transform;
+}
+.price-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 32px 80px rgba(15, 23, 42, 0.18);
+}
+
 
 .section {
   padding: clamp(66px, 9vw, 118px) clamp(18px, 6vw, 92px);
@@ -631,4 +649,677 @@ select {
   .nav-cta {
     width: 100%;
   }
+}
+
+/* Anima��es e Hover Efeitos */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Frufru nos bot�es */
+.button {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 24px rgba(31, 182, 166, 0.35);
+}
+
+.button.secondary:hover, .button.outline:hover {
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.15);
+}
+
+/* Frufru na comparison */
+.comparison article {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+
+.comparison article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.12);
+}
+
+.services article, .steps article {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
+  border-radius: 12px;
+}
+
+.services article:hover, .steps article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+  background: var(--white);
+}
+
+
+/* === Efeitos Frufru Premium === */
+
+.frufru-hidden {
+  opacity: 0;
+  transform: translateY(35px) scale(0.97);
+  filter: blur(4px);
+  transition: all 0.7s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.frufru-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Atrasos em cascata para elementos do Hero e Cards */
+.hero-proof div:nth-child(1), .services article:nth-child(1), .steps article:nth-child(1) { transition-delay: 50ms; }
+.hero-proof div:nth-child(2), .services article:nth-child(2), .steps article:nth-child(2) { transition-delay: 150ms; }
+.hero-proof div:nth-child(3), .services article:nth-child(3), .steps article:nth-child(3) { transition-delay: 250ms; }
+.services article:nth-child(4), .steps article:nth-child(4) { transition-delay: 350ms; }
+
+/* Efeitos intensos de hover */
+.button {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
+  will-change: transform;
+}
+.button:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(31, 182, 166, 0.35);
+}
+
+.button.secondary:hover, .button.outline:hover {
+  box-shadow: 0 15px 30px rgba(15, 23, 42, 0.15);
+}
+
+.comparison article {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+.comparison article:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+}
+
+.services article, .steps article {
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.3s ease, background 0.3s ease;
+  border-radius: 12px;
+}
+.services article:hover, .steps article:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
+  background: var(--white);
+  z-index: 2;
+}
+
+.price-card {
+  transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease;
+}
+.price-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 35px 70px rgba(15, 23, 42, 0.18);
+}
+
+/* Estilos refinados (Frufru) para as etapas do diagn�stico */
+.benefit-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 32px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.benefit-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 18px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.02);
+  cursor: default;
+}
+
+.benefit-list li:hover {
+  transform: translateX(8px) scale(1.02);
+  border-color: var(--teal);
+  box-shadow: 0 20px 40px rgba(10, 160, 142, 0.12);
+  z-index: 10;
+  position: relative;
+}
+
+.benefit-icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(10, 160, 142, 0.08);
+  color: var(--teal);
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.benefit-list li:hover .benefit-icon {
+  background: var(--teal);
+  color: var(--white);
+  transform: rotate(-10deg) scale(1.1);
+  box-shadow: 0 4px 12px rgba(10, 160, 142, 0.3);
+}
+
+.benefit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.benefit-content strong {
+  color: var(--slate);
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.benefit-list li:hover .benefit-content strong {
+  color: var(--teal);
+}
+
+.benefit-content span {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Frufru Avan�ado para os Cards de Antes e Depois */
+.comparison article.view {
+  position: relative;
+  overflow: hidden;
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--line);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  background: linear-gradient(145deg, var(--white) 0%, #FAFAFA 100%);
+}
+
+.view-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.badge-before {
+  background: rgba(244, 63, 94, 0.1);
+  color: #F43F5E;
+}
+
+.badge-after {
+  background: rgba(10, 160, 142, 0.1);
+  color: var(--teal-dark);
+}
+
+.comparison article.view.before:hover {
+  border-color: #F43F5E;
+  box-shadow: 0 20px 40px rgba(244, 63, 94, 0.12);
+  transform: translateY(-8px) rotate(-1deg);
+}
+
+.comparison article.view.after:hover {
+  border-color: var(--teal);
+  box-shadow: 0 20px 40px rgba(10, 160, 142, 0.15);
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Novo Mini Browser mock */
+.mini-screen {
+  margin-top: auto;
+  padding-top: 24px;
+  background: transparent !important;
+}
+
+.browser-bar {
+  display: flex;
+  gap: 6px;
+  padding: 10px 12px;
+  background: #E2E8F0;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid #CBD5E1;
+  border-bottom: none;
+}
+
+.browser-bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #94A3B8;
+}
+
+.browser-bar i:nth-child(1) { background: #F43F5E; }
+.browser-bar i:nth-child(2) { background: #FBBF24; }
+.browser-bar i:nth-child(3) { background: #10B981; }
+
+.mock-content {
+  padding: 16px;
+  border: 1px solid #CBD5E1;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  background: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mock-line {
+  height: 12px;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.mock-btn {
+  height: 24px;
+  border-radius: 6px;
+  width: 50%;
+  margin-top: 8px;
+}
+
+/* Before State Animations */
+.skeleton { background: #E2E8F0; }
+.skeleton.error { background: rgba(244, 63, 94, 0.2); }
+
+@keyframes glitch-skeleton {
+  0% { opacity: 1; transform: translateX(0); }
+  20% { opacity: 0.6; transform: translateX(-2px); }
+  40% { opacity: 1; transform: translateX(2px); }
+  60% { opacity: 0.5; transform: translateX(-1px); }
+  80% { opacity: 1; transform: translateX(1px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+.comparison article.before:hover .pulse-error {
+  animation: glitch-skeleton 0.6s infinite;
+  background: rgba(244, 63, 94, 0.3);
+}
+
+/* After State Styles */
+.success { background: var(--teal); width: 80%; }
+.success-light { background: var(--teal-light); width: 60%; }
+.success-btn { background: var(--amber); width: 100%; transition: transform 0.3s; }
+
+.comparison article.after:hover .success-btn {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(245, 158, 11, 0.4);
+}
+
+.mini-screen { display: flex; flex-direction: column; gap: 0; padding: 0 !important; }
+
+
+/* Estiliza��o da aba de Benef�cios do Pacote �nico (Lado Direito) */
+.package-benefits {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.package-benefits h3 {
+  font-size: 1.8rem;
+  color: var(--teal-dark);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.package-benefits > p {
+  color: var(--slate);
+  margin-bottom: 32px;
+  font-size: 1.05rem;
+  line-height: 1.5;
+}
+
+.benefit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.b-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.b-card::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(135deg, rgba(10, 160, 142, 0.05) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.b-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--teal);
+  box-shadow: 0 16px 32px rgba(10, 160, 142, 0.1);
+}
+
+.b-card:hover::before {
+  opacity: 1;
+}
+
+.b-icon {
+  font-size: 1.8rem;
+  margin-bottom: 16px;
+  display: inline-flex;
+  padding: 12px;
+  background: rgba(10, 160, 142, 0.08); /* fundo sutil para o icone */
+  border-radius: 12px;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.b-card:hover .b-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.b-card h4 {
+  font-size: 1.1rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+
+.b-card p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .benefit-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Estilo Premium Checklist (Pacote) */
+.premium-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.premium-features li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.9);
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.premium-features li:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.premium-features li span strong {
+  color: var(--white);
+  font-weight: 700;
+  margin-right: 4px;
+}
+
+.premium-features .check-icon {
+  width: 22px;
+  height: 22px;
+  color: var(--teal);
+  flex-shrink: 0;
+  background: rgba(10, 160, 142, 0.15);
+  border-radius: 50%;
+  padding: 4px;
+  box-shadow: 0 0 10px rgba(10, 160, 142, 0.2);
+}
+
+/* Estilo Premium Grid de Expans�o (Solu��es Extra) */
+.expansion-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 24px !important;
+}
+
+.service-card {
+  display: flex !important;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 32px !important;
+  background: var(--white);
+  border: 1px solid var(--line) !important;
+  border-radius: 16px !important;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  border: 2px solid transparent;
+  border-radius: 16px;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.service-card:hover {
+  transform: translateY(-8px) scale(1.01) !important;
+  box-shadow: 0 25px 50px rgba(15, 23, 42, 0.1) !important;
+}
+
+.service-card:hover::after {
+  border-color: var(--teal);
+  opacity: 0.5;
+}
+
+.sv-icon {
+  font-size: 2.2rem;
+  padding: 16px;
+  background: rgba(10, 160, 142, 0.05);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s ease;
+  box-shadow: inset 0 0 0 1px rgba(10, 160, 142, 0.1);
+}
+
+.service-card:hover .sv-icon {
+  transform: scale(1.1) rotate(4deg);
+  background: var(--teal);
+  color: #fff;
+  box-shadow: 0 10px 20px rgba(10, 160, 142, 0.3);
+}
+
+.sv-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.sv-content h3 {
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.service-card:hover .sv-content h3 {
+  color: var(--teal-dark);
+}
+
+.sv-content p {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .expansion-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .service-card {
+    flex-direction: column;
+    padding: 24px !important;
+  }
+}
+
+/* Efeitos Premium FAQ (Frufru Avan�ado) */
+.faq-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+@media (max-width: 1024px) {
+  .faq-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+details.frufru-faq {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.03);
+}
+
+details.frufru-faq:hover {
+  border-color: rgba(10, 160, 142, 0.4);
+  box-shadow: 0 12px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-2px);
+}
+
+details.frufru-faq[open] {
+  border-color: var(--teal);
+  box-shadow: 0 20px 40px rgba(10, 160, 142, 0.12);
+  transform: translateY(-2px);
+}
+
+details.frufru-faq summary {
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--ink);
+  cursor: pointer;
+  list-style: none;
+  transition: color 0.3s ease;
+}
+
+/* Esconde setinha padr�o (Safari/Chrome) */
+details.frufru-faq summary::-webkit-details-marker,
+details.frufru-faq summary::marker {
+  display: none;
+}
+
+details.frufru-faq summary:hover {
+  color: var(--teal-dark);
+}
+
+.faq-icon.plus {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: rgba(10, 160, 142, 0.1);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.faq-icon.plus::before, .faq-icon.plus::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: var(--teal);
+  transform: translate(-50%, -50%);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 2px;
+}
+
+.faq-icon.plus::before {
+  width: 14px;
+  height: 2px;
+}
+
+.faq-icon.plus::after {
+  width: 2px;
+  height: 14px;
+}
+
+details.frufru-faq[open] .faq-icon.plus {
+  background: var(--teal);
+  transform: rotate(90deg);
+}
+
+details.frufru-faq[open] .faq-icon.plus::before,
+details.frufru-faq[open] .faq-icon.plus::after {
+  background: white;
+}
+
+details.frufru-faq[open] .faq-icon.plus::after {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.faq-content {
+  padding: 0 24px;
+  color: var(--text);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: translateY(-6px);
+  transition: max-height 0.35s ease, opacity 0.35s ease, transform 0.35s ease, padding 0.35s ease;
+}
+
+details.frufru-faq[open] .faq-content {
+  max-height: 260px;
+  opacity: 1;
+  transform: translateY(0);
+  padding: 0 24px 24px;
+}
+
+.section-divider {
+  height: 1px;
+  max-width: 1200px;
+  margin: 72px auto 32px;
+  background: linear-gradient(90deg, transparent, rgba(15, 23, 42, 0.18), transparent);
 }
