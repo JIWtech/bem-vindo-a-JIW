@@ -8,7 +8,7 @@
       name="description"
       content="A JIW organiza presença digital, canais de contato, landing pages, automações, ERP e canais omnichannel para empresas venderem e atenderem melhor."
     />
-    <link rel="stylesheet" href="styles.css?v=3" />
+    <link rel="stylesheet" href="styles.css?v=13" />
   </head>
   <body>
     <header class="topbar">
@@ -118,28 +118,34 @@
         <div class="comparison" aria-label="Antes e depois da presença digital">
           <article class="view before">
             <div class="view-badge badge-before">Antes</div>
-            <h3>Identidade confusa</h3>
-            <p>Identidade e oferta confusas — visitante não encontra motivo claro para comprar.</p>
-            <div class="mini-screen">
-              <div class="browser-bar"><i></i><i></i><i></i></div>
-              <div class="mock-content">
-                <div class="mock-line skeleton pulse-error"></div>
-                <div class="mock-line skeleton"></div>
-                <div class="mock-btn skeleton error"></div>
-              </div>
+            <h3>Cliente perdido</h3>
+            <p>Mensagem confusa, identidade sem dire&ccedil;&atilde;o e contato espalhado. O cliente chega, n&atilde;o entende o valor e vai embora.</p>
+            <div class="mini-screen conversion-map confused" aria-hidden="true">
+              <div class="map-point">?</div>
+              <div class="map-path broken"></div>
+              <div class="map-point">!</div>
+              <div class="map-path short"></div>
+              <div class="map-point muted">x</div>
+              <div class="map-caption">visita sem a&ccedil;&atilde;o</div>
             </div>
           </article>
           <article class="view after">
             <div class="view-badge badge-after">Depois</div>
-            <h3>Caminho de venda</h3>
-            <p>Proposta objetiva, omnicanalidade e landing page integrada, serviços organizados e alta conversão.</p>
-            <div class="mini-screen">
-              <div class="browser-bar"><i></i><i></i><i></i></div>
-              <div class="mock-content">
-                <div class="mock-line success"></div>
-                <div class="mock-line success-light"></div>
-                <div class="mock-btn success-btn"></div>
+            <h3>Caminho que vende</h3>
+            <p>Oferta clara, prova de confian&ccedil;a e contato direto. O cliente entende, chama e entra em um fluxo preparado para converter.</p>
+            <div class="mini-screen conversion-map sales" aria-hidden="true">
+              <div class="sales-step lead-symbol">
+                <i></i>
               </div>
+              <div class="sales-arrow"></div>
+              <div class="sales-step chat-symbol">
+                <i></i>
+              </div>
+              <div class="sales-arrow"></div>
+              <div class="sales-step sale">
+                <i></i>
+              </div>
+              <div class="map-caption"><span></span><span></span><span></span></div>
             </div>
           </article>
         </div>
@@ -306,26 +312,50 @@
         </div>
       </section>
 
-      <section class="section split">
+      <section class="section split clients-section">
         <div class="section-copy">
-          <div class="premium-badge">Público Alvo</div>
-          <h2 class="gradient-text">Negócios locais que dependem de confiança e resposta rápida.</h2>
+          <div class="premium-badge">Nossos clientes</div>
+          <h2 class="gradient-text">Empresas que j&aacute; confiaram na JIW para evoluir sua presen&ccedil;a digital.</h2>
           <p>
-            Hotéis, pousadas, clínicas, restaurantes, salões, lojas, academias,
-            pet shops e prestadores de serviço podem ganhar clareza comercial sem
-            começar por um projeto grande.
+            Atendemos neg&oacute;cios que precisam de clareza, agilidade e tecnologia aplicada
+            ao relacionamento com seus clientes.
           </p>
         </div>
 
-        <div class="segment-grid">
-          <span>Hotelaria</span>
-          <span>Clínicas</span>
-          <span>Beleza</span>
-          <span>Restaurantes</span>
-          <span>Academias</span>
-          <span>Pet shops</span>
-          <span>Lojas locais</span>
-          <span>Serviços premium</span>
+        <div class="client-grid" aria-label="Clientes atendidos">
+          <article class="client-card brand-renix">
+            <div class="client-wordmark renix-mark" aria-label="Renix">
+              <span>RE</span>
+              <span>NIX</span>
+            </div>
+          </article>
+          <article class="client-card brand-transamerica">
+            <div class="client-wordmark transamerica-mark" aria-label="Hotel Transamerica">
+              <span>Hotel</span>
+              <strong>Transamerica</strong>
+            </div>
+          </article>
+          <article class="client-card brand-comfort">
+            <img
+              src="https://www.redeandradecomfort.com.br/media/resize/2000x2000/pasta/1/617c46f2c135a.png"
+              alt="Hotel Comfort"
+              loading="lazy"
+              onerror="this.hidden=true; this.nextElementSibling.style.display='block';"
+            />
+            <span class="client-fallback">Hotel Comfort</span>
+          </article>
+          <article class="client-card brand-universo">
+            <img
+              class="client-emblem"
+              src="https://dcdn-us.mitiendanube.com/stores/002/076/627/themes/common/logo-2029846479-1647210460-143c9d32df3f88224ec982d9ffb665591647210461.ico"
+              alt=""
+              loading="lazy"
+              onerror="this.hidden=true;"
+            />
+            <div class="client-wordmark universo-mark" aria-label="Universo Prata">
+              <strong>Universo Prata</strong>
+            </div>
+          </article>
         </div>
       </section>
 

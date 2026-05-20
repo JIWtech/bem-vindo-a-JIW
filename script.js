@@ -63,7 +63,7 @@ form?.addEventListener("submit", async (event) => {
 
 // Scroll reveal (run once)
 const revealElements = document.querySelectorAll(
-  '.section-head, .price-card, .steps article, .comparison article, .section-copy, .service-card, .b-card, .lead-form',
+  '.section-head, .price-card, .steps article, .comparison article, .section-copy, .service-card, .b-card, .client-card, .lead-form',
 );
 revealElements.forEach(el => el.classList.add('reveal'));
 
@@ -83,7 +83,7 @@ revealElements.forEach((el) => {
 // Scroll reveal (run once)
 document.addEventListener('DOMContentLoaded', () => {
   const elements = document.querySelectorAll(
-    'h2, .section-copy p, .hero-proof div, .price-card, .steps article, .comparison article, .benefit-list li, .b-card, .package-benefits h3, .package-benefits p, .premium-features li, .service-card, .section-head p, details.frufru-faq, .lead-form',
+    'h2, .section-copy p, .hero-proof div, .price-card, .steps article, .comparison article, .benefit-list li, .b-card, .client-card, .package-benefits h3, .package-benefits p, .premium-features li, .service-card, .section-head p, details.frufru-faq, .lead-form',
   );
   
   elements.forEach((el) => {
@@ -103,21 +103,53 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const faqItems = document.querySelectorAll('details.frufru-faq');
   faqItems.forEach((item) => {
+    const summary = item.querySelector('summary');
     let openTimer;
     let closeTimer;
+    let finishCloseTimer;
+
+    const openFaq = () => {
+      clearTimeout(closeTimer);
+      clearTimeout(finishCloseTimer);
+      item.setAttribute('open', 'open');
+      requestAnimationFrame(() => {
+        item.classList.add('is-open');
+      });
+    };
+
+    const closeFaq = () => {
+      item.classList.remove('is-open');
+      finishCloseTimer = setTimeout(() => {
+        item.removeAttribute('open');
+      }, 480);
+    };
 
     item.addEventListener('mouseenter', () => {
       clearTimeout(closeTimer);
+      clearTimeout(finishCloseTimer);
       openTimer = setTimeout(() => {
-        item.setAttribute('open', 'open');
+        openFaq();
       }, 90);
     });
 
     item.addEventListener('mouseleave', () => {
       clearTimeout(openTimer);
       closeTimer = setTimeout(() => {
-        item.removeAttribute('open');
+        closeFaq();
       }, 140);
+    });
+
+    summary?.addEventListener('click', (event) => {
+      event.preventDefault();
+      clearTimeout(openTimer);
+      clearTimeout(closeTimer);
+
+      if (item.classList.contains('is-open')) {
+        closeFaq();
+        return;
+      }
+
+      openFaq();
     });
   });
 });
