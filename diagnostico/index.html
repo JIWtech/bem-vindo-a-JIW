@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Diagnóstico Digital | JIW Soluções Tecnológicas</title>
+    <meta
+      name="description"
+      content="Descubra o que está travando suas vendas online. A JIW analisa sua presença digital e mostra os pontos de melhoria para sua empresa vender melhor."
+    />
+    <link rel="icon" type="image/svg+xml" href="../assets/jiw-mark.svg" />
+    <link rel="shortcut icon" href="../assets/jiw-mark.svg" />
+    <link rel="apple-touch-icon" href="../assets/jiw-mark.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <style>
+      /* ── Diagnóstico page specific styles ── */
+
+      .diag-hero {
+        position: relative;
+        overflow: hidden;
+        padding: clamp(100px, 14vw, 160px) clamp(18px, 6vw, 92px) clamp(48px, 6vw, 80px);
+        color: var(--paper);
+        background:
+          linear-gradient(135deg, rgba(31, 182, 166, 0.28), transparent 40%),
+          linear-gradient(30deg, transparent 50%, rgba(242, 184, 75, 0.12)),
+          var(--ink);
+      }
+
+      .diag-hero .eyebrow { color: var(--amber); }
+
+      .diag-hero h1 {
+        max-width: 860px;
+        margin: 0;
+        font-size: clamp(36px, 6vw, 78px);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+
+      .diag-hero p {
+        max-width: 680px;
+        color: #d7e0e8;
+        font-size: clamp(17px, 2vw, 21px);
+        line-height: 1.6;
+      }
+
+      .diag-hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      /* ── Grid de problemas ── */
+      .problems {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+        margin-top: 42px;
+      }
+
+      .problem-card {
+        padding: 28px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        box-shadow: 0 12px 32px rgba(15, 23, 42, 0.05);
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+      }
+
+      .problem-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 44px rgba(15, 23, 42, 0.1);
+      }
+
+      .problem-icon {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        margin-bottom: 18px;
+        border-radius: 12px;
+        color: var(--teal);
+        background: rgba(31, 182, 166, 0.1);
+      }
+
+      .problem-card h3 {
+        margin-bottom: 10px;
+      }
+
+      .problem-card p {
+        font-size: 15px;
+        line-height: 1.55;
+        color: var(--muted);
+      }
+
+      /* ── Comparação antes/depois ── */
+      .diag-compare {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 42px;
+      }
+
+      .compare-panel {
+        padding: 32px;
+        border-radius: 12px;
+        border: 1px solid var(--line);
+      }
+
+      .compare-panel.before {
+        background: #fef3c7;
+        border-color: #fde68a;
+      }
+
+      .compare-panel.after {
+        background: #d1fae5;
+        border-color: #6ee7b7;
+      }
+
+      .compare-panel .badge {
+        display: inline-block;
+        margin-bottom: 14px;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+
+      .compare-panel.before .badge {
+        color: #92400e;
+        background: rgba(146, 64, 14, 0.12);
+      }
+
+      .compare-panel.after .badge {
+        color: var(--teal-dark);
+        background: rgba(31, 182, 166, 0.15);
+      }
+
+      .compare-panel h3 { margin-bottom: 12px; }
+
+      .compare-panel ul {
+        margin: 0;
+        padding-left: 20px;
+        display: grid;
+        gap: 8px;
+      }
+
+      .compare-panel li {
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--ink-soft);
+      }
+
+      /* ── Etapas do diagnóstico ── */
+      .diag-steps-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 18px;
+        counter-reset: dstep;
+      }
+
+      .diag-step {
+        position: relative;
+        padding: 28px 24px;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        background: var(--white);
+        counter-increment: dstep;
+        transition: transform 0.22s ease;
+      }
+
+      .diag-step:hover {
+        transform: translateY(-3px);
+      }
+
+      .diag-step::before {
+        content: counter(dstep);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 36px;
+        height: 36px;
+        margin-bottom: 14px;
+        border-radius: 50%;
+        color: var(--teal-dark);
+        background: rgba(31, 182, 166, 0.12);
+        font-size: 15px;
+        font-weight: 900;
+      }
+
+      .diag-step h3 { margin-bottom: 10px; }
+
+      .diag-step p {
+        font-size: 15px;
+        color: var(--muted);
+      }
+
+      /* ── FAQ diagnóstico ── */
+      .diag-faq details {
+        max-width: 800px;
+        padding: 20px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .diag-faq summary {
+        color: var(--ink);
+        font-size: 18px;
+        font-weight: 850;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .diag-faq summary::-webkit-details-marker { display: none; }
+
+      .diag-faq summary::after {
+        content: "+";
+        flex-shrink: 0;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(31, 182, 166, 0.1);
+        color: var(--teal-dark);
+        font-size: 18px;
+        font-weight: 900;
+        transition: transform 0.2s;
+      }
+
+      details[open] summary::after {
+        content: "−";
+        transform: rotate(180deg);
+      }
+
+      .diag-faq details p {
+        margin-top: 10px;
+        font-size: 16px;
+      }
+
+      /* ── CTA final ── */
+      .diag-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: clamp(64px, 8vw, 110px) clamp(18px, 6vw, 92px);
+        color: var(--paper);
+        background:
+          linear-gradient(135deg, rgba(31, 182, 166, 0.18), transparent 45%),
+          var(--ink);
+      }
+
+      .diag-cta h2 {
+        color: var(--paper);
+        max-width: 680px;
+      }
+
+      .diag-cta p {
+        color: #d7e0e8;
+        max-width: 540px;
+        margin-bottom: 28px;
+      }
+
+      /* ── Responsivo ── */
+      @media (max-width: 1020px) {
+        .problems {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .diag-steps-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (max-width: 700px) {
+        .problems,
+        .diag-compare,
+        .diag-steps-grid {
+          grid-template-columns: 1fr;
+        }
+        .diag-hero-actions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .diag-hero-actions .button {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="../" aria-label="Ir para o início">
+        <img src="../assets/jiw-mark.svg" alt="" />
+        <span>JIW</span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="../#diagnostico">Diagnóstico</a>
+        <a href="../#pacotes">Pacotes</a>
+        <a href="../#solucoes">Soluções</a>
+        <a href="../#processo">Processo</a>
+        <a href="../#contato">Contato</a>
+      </nav>
+      <a class="nav-cta" href="../#contato">Pedir diagnóstico</a>
+    </header>
+
+    <main>
+      <!-- ── Hero ── -->
+      <section class="diag-hero">
+        <p class="eyebrow">Diagnóstico digital gratuito</p>
+        <h1>Descubra o que está travando suas vendas antes da primeira mensagem.</h1>
+        <p>
+          Analisamos sua presença digital — Instagram, WhatsApp, site e canais de contato —
+          e mostramos exatamente onde o cliente está desistindo antes de chamar.
+        </p>
+        <div class="diag-hero-actions">
+          <a class="button primary" href="../#contato">Quero meu diagnóstico</a>
+          <a class="button secondary" href="#como-funciona">Como funciona</a>
+        </div>
+      </section>
+
+      <!-- ── Problemas comuns ── -->
+      <section class="section" id="problemas">
+        <div class="section-head">
+          <p class="eyebrow">Sinais que algo está errado</p>
+          <h2>Você reconhece algum desses problemas?</h2>
+        </div>
+
+        <div class="problems">
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            </div>
+            <h3>Perfil sem clareza</h3>
+            <p>O cliente chega no Instagram ou Google e não entende em 5 segundos o que você vende.</p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>WhatsApp desorganizado</h3>
+            <p>Sem mensagem automática, sem catálogo, sem link direto. O cliente desiste antes de digitar.</p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            </div>
+            <h3>Link na bio genérico</h3>
+            <p>O link leva para um lugar confuso, sem chamada para ação e sem prova de confiança.</p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3>Site sem conversão</h3>
+            <p>Página bonita mas sem objetivo comercial claro. Visitantes entram e saem sem pedir orçamento.</p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Canais desconectados</h3>
+            <p>Instagram, WhatsApp e site parecem de empresas diferentes. Não há jornada integrada.</p>
+          </article>
+
+          <article class="problem-card">
+            <div class="problem-icon">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            </div>
+            <h3>Sem prova social</h3>
+            <p>Nenhum depoimento, case ou indicador de confiança visível para o visitante decidir.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── Antes e Depois ── -->
+      <section class="section muted">
+        <div class="section-head">
+          <p class="eyebrow">Visão do cliente</p>
+          <h2>O que muda depois do diagnóstico.</h2>
+        </div>
+
+        <div class="diag-compare">
+          <div class="compare-panel before">
+            <span class="badge">Antes</span>
+            <h3>Perfil confuso e vendas frias</h3>
+            <ul>
+              <li>Link genérico sem chamada para ação</li>
+              <li>Informações espalhadas e desatualizadas</li>
+              <li>WhatsApp pessoal sem catálogo</li>
+              <li>Site sem botão de contato visível</li>
+              <li>Cliente não sabe se pode confiar</li>
+            </ul>
+          </div>
+          <div class="compare-panel after">
+            <span class="badge">Depois</span>
+            <h3>Caminho claro para venda</h3>
+            <ul>
+              <li>Bio com proposta objetiva e link direto</li>
+              <li>WhatsApp Business com catálogo e resposta automática</li>
+              <li>Página com serviços, provas e botão de contato</li>
+              <li>Artes e textos coerentes com o negócio</li>
+              <li>Cliente entende, confia e chama</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Como funciona ── -->
+      <section class="section" id="como-funciona">
+        <div class="section-head">
+          <p class="eyebrow">Passo a passo</p>
+          <h2>Como o diagnóstico funciona na prática.</h2>
+        </div>
+
+        <div class="diag-steps-grid">
+          <article class="diag-step">
+            <h3>Você envia seus dados</h3>
+            <p>Nome, empresa, Instagram ou site — o básico para começarmos a analisar.</p>
+          </article>
+
+          <article class="diag-step">
+            <h3>Analisamos tudo</h3>
+            <p>Verificamos Instagram, WhatsApp, site, link na bio e caminho até o contato.</p>
+          </article>
+
+          <article class="diag-step">
+            <h3>Montamos o relatório</h3>
+            <p>Listamos os pontos que estão travando sua venda, organizados por prioridade.</p>
+          </article>
+
+          <article class="diag-step">
+            <h3>Indicamos a solução</h3>
+            <p>Mostramos qual pacote ou melhoria faz mais sentido para o momento da empresa.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ── FAQ ── -->
+      <section class="section muted diag-faq">
+        <div class="section-head">
+          <p class="eyebrow">Dúvidas sobre o diagnóstico</p>
+          <h2>Perguntas frequentes.</h2>
+        </div>
+
+        <details>
+          <summary>O diagnóstico é realmente gratuito?</summary>
+          <p>Sim. Analisamos sua presença digital sem custo. Você só investe se quiser que executemos as melhorias.</p>
+        </details>
+        <details>
+          <summary>Quanto tempo leva para receber o resultado?</summary>
+          <p>Normalmente entre 24 e 48 horas após o envio dos dados pelo formulário.</p>
+        </details>
+        <details>
+          <summary>Preciso ter site para pedir o diagnóstico?</summary>
+          <p>Não. Analisamos o que você já tem — pode ser só Instagram e WhatsApp.</p>
+        </details>
+        <details>
+          <summary>Vocês analisam concorrentes também?</summary>
+          <p>Fazemos uma comparação rápida com o mercado local para identificar diferenciais e oportunidades.</p>
+        </details>
+        <details>
+          <summary>E se eu já tiver tudo organizado?</summary>
+          <p>Ótimo. Nesse caso, o diagnóstico vai indicar melhorias avançadas como automações, sistemas e escala.</p>
+        </details>
+      </section>
+
+      <!-- ── CTA final ── -->
+      <section class="diag-cta">
+        <p class="eyebrow" style="color: var(--amber);">Pronto para começar?</p>
+        <h2>Peça seu diagnóstico agora e veja o que está travando suas vendas.</h2>
+        <p>É rápido, gratuito e pode mudar a forma como seus clientes enxergam sua empresa.</p>
+        <a class="button primary" href="../#contato">Quero meu diagnóstico gratuito</a>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <img src="../assets/jiw-logo.svg" alt="JIW Soluções Tecnológicas" />
+      <span>Presença digital, automações e sistemas para empresas que querem vender melhor.</span>
+    </footer>
+  </body>
+</html>
